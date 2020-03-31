@@ -11,6 +11,9 @@
     function hideURLbar() {
         window.scrollTo(0, 1);
     }
+
+
+
 </script>
 <!-- //Meta tag Keywords -->
 <!-- Custom-Files -->
@@ -23,6 +26,11 @@
 <!-- //font-awesome-icons -->
 <!-- /Fonts -->
 <link href="//fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet">
+
+
 <!-- //Fonts -->
+
+
+
 
 </head>

@@ -27,6 +27,7 @@ a:hover {
     text-decoration: none;
 }
 
+
 input[type="button"],
 input[type="submit"],
 input[type="text"],
@@ -50,6 +51,54 @@ h6 {
     letter-spacing: 1px;
     font-family: 'Hind', sans-serif;
 }
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #74d2e7;
+    color: #4d6171;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    outline: none
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #74d2e7;
+    border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #74d2e7;
+    color: #4d6171;
+    min-width: 160px;
+
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
 
 p {
     font-size: 0.9em;
@@ -77,8 +126,8 @@ ol {
 }
 
 .top-w3pvt {
-    border-bottom: 1px solid #8bb4df;
-    padding-bottom: 0.5em;
+
+
 }
 
 .nav-top-wthree {
@@ -98,7 +147,7 @@ header a.btn span {
 }
 
 .search-form {
-    width: 30%;
+    width: 70%;
 }
 
 form.newsletter {
@@ -273,7 +322,7 @@ ul.menu li span {
     color: #fff;
 }
 
-/* Second, Third and more Tiers	
+/* Second, Third and more Tiers
  * We move the 2nd and 3rd etc tier dropdowns to the left
  * by the amount of the width of the first tier.
 */
@@ -479,7 +528,7 @@ li > a:only-child:after {
 
 /*--banner--*/
 .main-sec {
-    background: #74d2e7;
+    background: #a84632;
     min-height: 43em;
     position: relative;
 }
@@ -1522,8 +1571,8 @@ h3.sub-w3ls-headf {
 
 @media(max-width:800px) {
     .search-form {
-        width: 40%;
-        float: right;
+        width: 70%;
+        margin: auto;
     }
 
     .item-info-product h4 a {

@@ -2,7 +2,7 @@
     <div class="container py-md-5">
         <div class="row">
             <div class="col-lg-3 footer_wthree_gridf mt-lg-5">
-                <h2><a href="index.html"><span>B</span>aggage
+                <h2><a href="index.html"><span>My</span>Local
                     </a> </h2>
                 <label class="sub-des2">Online Store</label>
             </div>
