@@ -14,7 +14,7 @@
 
                                 <h4>{{$store -> name}}</h4>
                                 <p>Lorem ipsum dolor sit,Nulla pellentesque dolor ipsum laoreet eleifend integer,Pellentesque maximus libero.Lorem ipsum dolor sit,Nulla pellentesque dolor ipsum laoreet eleifend integer,Pellentesque maximus libero.</p>
-                                <a href="single.html" class="btn shop mt-4 mb-4">Place Order</a>
+                                <a href="/stores/{{$store->id}}" class="btn shop mt-4 mb-4">Place Order</a>
 
 
                         </div>

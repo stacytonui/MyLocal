@@ -21,7 +21,7 @@
     </script>
     <!-- //Meta tag Keywords -->
     <!-- Custom-Files -->
-    <link rel="stylesheet" href=" {{ asset('css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <!-- Bootstrap-Core-CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css" media="all" />
     <!-- Style-CSS -->

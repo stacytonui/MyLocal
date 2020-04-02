@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                        <form class="form-inline" method="post" action="/pages/store">
+                        <form class="form-inline" method="post" action="/stores">
                             @csrf
                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Preference</label>
                             <select class="custom-select my-1 mr-sm-2" name="location" id="inlineFormCustomSelectPref">

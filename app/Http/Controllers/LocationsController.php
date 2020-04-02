@@ -9,6 +9,10 @@ use Symfony\Component\Console\Input\Input;
 
 class LocationsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -20,6 +24,8 @@ class LocationsController extends Controller
         $locations = Location::all();
         return view('home', ['location' => $locations,]);
     }
+
+
    /** public function list()
     * {
  *

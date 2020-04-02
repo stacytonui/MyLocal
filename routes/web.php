@@ -21,8 +21,27 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home', 'LocationsController@index');
+Route::get('/stores/{store}', 'StoresController@show');
 
-Route::post('/pages/store', 'LocationsController@getLocation');
+
+Route::get('/test', function (){
+
+    $store=\App\Store::first();
+
+    $products=\App\Product::all();
+
+    $store->products()->attach($products);
+
+    dd($products);
+
+
+});
+
+
+Route::post('/stores', 'LocationsController@getLocation');
+
+
+
 
 
 
