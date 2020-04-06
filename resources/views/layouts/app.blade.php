@@ -10,11 +10,13 @@
 </head>
 <body>
 <div id="app">
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" style="width: 100%; margin-top: 0px">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" style="width: 100%; background-color: #ec1c24; margin-top: 0px">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
                 MyLocal
             </a>
+
+            @yield('category')
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -38,7 +40,23 @@
                             </li>
                         @endif
                     @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle"
+                               href="#" role="button" data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false"
+                            >CART
+                        <span class="badge badge-pill badge-dark">
+                            <i class="fa fa-shopping-cart" style="font-size: 20px;"></i> {{ \Cart::getTotalQuantity()}}
+                        </span>
+                            </a>
 
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="width: 450px; padding: 0px; border-color: #9DA0A2">
+                                <ul class="list-group dropdown-item" style="margin: 20px;">
+                                    @include('inc.cart-drop')
+                                </ul>
+
+                            </div>
+                        </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }} <span class="caret"></span>
@@ -56,23 +74,7 @@
                                 </form>
                             </div>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle"
-                               href="#" role="button" data-toggle="dropdown"
-                               aria-haspopup="true" aria-expanded="false"
-                            >
-                        <span class="badge badge-pill badge-dark">
-                            <i class="fa fa-shopping-cart"></i> {{ \Cart::getTotalQuantity()}}
-                        </span>
-                            </a>
 
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="width: 450px; padding: 0px; border-color: #9DA0A2">
-                                <ul class="list-group" style="margin: 20px;">
-                                    @include('inc.cart-drop')
-                                </ul>
-
-                            </div>
-                        </li>
                     @endguest
                 </ul>
             </div>
@@ -82,6 +84,8 @@
     <main class="py-4">
         @yield('content')
     </main>
+@yield('extra-js')
+
 </div>
 </body>
 </html>

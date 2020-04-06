@@ -14,9 +14,52 @@ body {
     scroll-behavior: smooth;
 }
 
-body {
+
+.sidenav {
+    height: 100%;
+    width: 180px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
     padding-top: 20px;
 }
+
+
+
+.mainshop {
+   /* Same as the width of the sidenav */
+    /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+@media (max-width: 480px) {
+    .remove{
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 320px) {
+    .remove{
+        margin-top: 0px;
+    }
+
+ @media (min-width: 801px) {
+     .remove{
+         margin-top: 5px;
+     }
+
+ }
+
+}
+
 
 .card-deck {
     margin: 0 -15px;
@@ -197,7 +240,7 @@ header button.btn {
 nav {
     margin: 0;
     padding: 0;
-    margin-top: 10px;
+
     float: left;
 }
 
@@ -527,8 +570,8 @@ ul.menu li span {
 
 /*--banner--*/
 .main-sec {
-    background: #a84632;
-    min-height: 43em;
+    background: antiquewhite;
+   height: 500px;
     position: relative;
 }
 

@@ -1,6 +1,7 @@
+
 @if(count(\Cart::getContent()) > 0)
     @foreach(\Cart::getContent() as $item)
-        <li class="list-group-item">
+        <li class="list-group-item dropdown-item">
             <div class="row">
                 <div class="col-lg-3">
                     <img src="/images/{{ $item->attributes->image }}"
@@ -12,17 +13,17 @@
                     <br><small>Qty: {{$item->quantity}}</small>
                 </div>
                 <div class="col-lg-3">
-                    <p>${{ \Cart::get($item->id)->getPriceSum() }}</p>
+                    <p>KES{{ \Cart::get($item->id)->getPriceSum() }}</p>
                 </div>
                 <hr>
             </div>
         </li>
     @endforeach
     <br>
-    <li class="list-group-item">
+    <li class="list-group-item dropdown-item">
         <div class="row">
             <div class="col-lg-10">
-                <b>Total: </b>${{ \Cart::getTotal() }}
+                <b>Total: </b>KES {{ \Cart::getTotal() }}
             </div>
             <div class="col-lg-2">
                 <form action="{{ route('cart.clear') }}" method="POST">
@@ -42,5 +43,6 @@
         </a>
     </div>
 @else
-    <li class="list-group-item">Your Cart is Empty</li>
+    <li class="list-group-item dropdown-item">Your Cart is Empty</li>
 @endif
+

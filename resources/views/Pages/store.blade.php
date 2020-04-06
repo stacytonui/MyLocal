@@ -8,7 +8,7 @@
                     <div class="row grids-wthree-info">
                         @foreach($store as $store)
                         <div class="col-lg-3 bag-img">
-                            <img src="{{ asset('images/bottles.png') }}" class="img-fluid" alt="" />
+                            <img src="{{ asset('images/bottless.png') }}" class="img-fluid" alt="" />
                         </div>
                         <div class="col-lg-9 mb-2 ab-info-con ab-inf-page text-left">
 

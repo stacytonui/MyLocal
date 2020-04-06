@@ -18,7 +18,7 @@
                             @csrf
                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Preference</label>
                             <select class="custom-select my-1 mr-sm-2" name="location" id="inlineFormCustomSelectPref">
-                                <option selected>Choose...</option>
+                                <option selected disabled>Choose...</option>
                                 @foreach($location as $location)
                                     <option name="location" value="{{$location->id}}" >{{ $location->name }}</option>
                                 @endforeach

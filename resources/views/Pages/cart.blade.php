@@ -1,13 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container" style="margin-top: 80px">
+    <section class="banner-bottom py-5">
+    <div class="container" ">
+        <div class="col-12">
         <nav aria-label="breadcrumb" style="width: 100%">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Shop</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Cart</li>
             </ol>
         </nav>
+        </div>
         @if(session()->has('success_msg'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 {{ session()->get('success_msg') }}
@@ -34,7 +37,7 @@
                 </div>
             @endforeach
         @endif
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mt-5" >
             <div class="col-lg-7">
                 <br>
                 @if(\Cart::getTotalQuantity()>0)
@@ -53,30 +56,35 @@
                         </div>
                         <div class="col-lg-5">
                             <p>
-                                <b><a href="/shop/{{ $item->attributes->slug }}">{{ $item->name }}</a></b><br>
-                                <b>Price: </b>${{ $item->price }}<br>
+                                <b><a href="">{{ $item->name }}</a></b><br>
+                                <b>Price: </b>KES {{ $item->price }}<br>
 
-                                <b>Sub Total: </b>${{ \Cart::get($item->id)->getPriceSum() }}<br>
+                                <b>Sub Total: </b>KES {{ \Cart::get($item->id)->getPriceSum() }}<br>
                                 {{--                                <b>With Discount: </b>${{ \Cart::get($item->id)->getPriceSumWithConditions() }}--}}
                             </p>
                         </div>
-                        <div class="col-lg-4">
-                            <div class="row">
+                        <div class="col-lg-4 pl-3">
+                           <div class="row">
+
                                 <form action="{{ route('cart.update') }}" method="POST">
                                     {{ csrf_field() }}
-                                    <div class="form-group row">
+                                    <div class="input-group">
                                         <input type="hidden" value="{{ $item->id}}" id="id" name="id">
-                                        <input type="number" class="form-control form-control-sm" value="{{ $item->quantity }}"
+                                        <input type="number" class="form-control form-control-sm mb-1" value="{{ $item->quantity }}"
                                                id="quantity" name="quantity" style="width: 70px; margin-right: 10px;">
-                                        <button class="btn btn-secondary btn-sm" style="margin-right: 25px;"><i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-secondary btn-sm mb-1" style="margin-right: 25px;"><i class="fa fa-edit"></i>Update</button>
                                     </div>
+
                                 </form>
+
+
                                 <form action="{{ route('cart.remove') }}" method="POST">
                                     {{ csrf_field() }}
                                     <input type="hidden" value="{{ $item->id }}" id="id" name="id">
-                                    <button class="btn btn-dark btn-sm" style="margin-right: 10px;"><i class="fa fa-trash"></i></button>
+                                    <button class="btn btn-dark btn-sm remove" style="margin-right: 10px;"><i class="fa fa-trash"> Remove Item</i></button>
                                 </form>
-                            </div>
+                               </div>
+
                         </div>
                     </div>
                     <hr>
@@ -84,7 +92,7 @@
                 @if(count($cartCollection)>0)
                     <form action="{{ route('cart.clear') }}" method="POST">
                         {{ csrf_field() }}
-                        <button class="btn btn-secondary btn-md">Clear Cart</button>
+                        <button class="btn btn-secondary btn-md mb-2">Clear Cart</button>
                     </form>
                 @endif
             </div>
@@ -92,18 +100,26 @@
                 <div class="col-lg-5">
                     <div class="card">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><b>Total: </b>${{ \Cart::getTotal() }}</li>
+                            <li class="list-group-item"><b>Total: </b>KES {{ \Cart::getTotal() }}</li>
                         </ul>
                     </div>
                     <br>
 
-                    <a href="URL::previous()" class="btn btn-dark">Continue Shopping</a>
+                    <a href="URL::previous()" class="btn btn-dark mb-2">Continue Shopping</a>
                     <a href="/checkout" class="btn btn-success">Proceed To Checkout</a>
                 </div>
             @endif
         </div>
 
         <br><br>
-    </div>
+    </section>
+@endsection
+
+@section('extra-js')
+
+<script>
+
+</script>
+
 @endsection
 

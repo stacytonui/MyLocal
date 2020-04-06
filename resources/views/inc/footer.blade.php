@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-3 footer_wthree_gridf mt-lg-5">
                 <h2><a href="index.html"><span>My</span>Local
-                    </a> </h2>
+                    </a></h2>
                 <label class="sub-des2">Online Store</label>
             </div>
             <div class="col-lg-3 footer_wthree_gridf mt-md-0 mt-4">
@@ -77,7 +77,7 @@
 
 <!-- copyright -->
 <div class="cpy-right text-center py-3">
-    <p>© 2020  Mylocal. All rights reserved
+    <p>© 2020 Mylocal. All rights reserved
     </p>
 
 </div>
