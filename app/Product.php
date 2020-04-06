@@ -13,6 +13,6 @@ class Product extends Model
 
     public function stores()
     {
-        return $this->belongsToMany(Store::class)->withTimestamps;
+        return $this->belongsToMany(Store::class)->withTimestamps();
     }
 }

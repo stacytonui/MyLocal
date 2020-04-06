@@ -14,6 +14,42 @@ body {
     scroll-behavior: smooth;
 }
 
+body {
+    padding-top: 20px;
+}
+
+.card-deck {
+    margin: 0 -15px;
+    justify-content: space-between;
+}
+
+.card-deck .card {
+    margin: 0 0 1rem;
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .card-deck .card {
+        -ms-flex: 0 0 48.7%;
+        flex: 0 0 48.7%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .card-deck .card {
+        -ms-flex: 0 0 32%;
+        flex: 0 0 32%;
+    }
+}
+
+@media (min-width: 992px)
+{
+    .card-deck .card {
+        -ms-flex: 0 0 24%;
+        flex: 0 0 24%;
+    }
+}
+
+
 body a {
     text-decoration: none;
     transition: 0.5s all;
@@ -52,53 +88,16 @@ h6 {
     font-family: 'Hind', sans-serif;
 }
 
-/* Dropdown Button */
-.dropbtn {
-    background-color: #74d2e7;
-    color: #4d6171;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-    outline: none
+
+
+
+.v-divider{
+  margin-left:5px;
+  margin-right:5px;
+  width:1px;
+  height:100%;
+  border-left:1px solid gray;
 }
-
-/* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
-    background-color: #74d2e7;
-    border: none;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #74d2e7;
-    color: #4d6171;
-    min-width: 160px;
-
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd}
-
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;}
 
 p {
     font-size: 0.9em;
@@ -288,7 +287,7 @@ nav a:hover {
 
 /* Hide Dropdowns by Default
  * and giving it a position of absolute */
-nav ul ul {
+/* nav ul ul {
     display: none;
     position: absolute;
     top: 30px;
@@ -300,12 +299,12 @@ nav ul ul {
 }
 
 /* Display Dropdowns on Hover */
-nav ul li:hover > ul {
+/*nav ul li:hover > ul {
     display: inherit;
 }
 
 /* Fisrt Tier Dropdown */
-nav ul ul li {
+/*nav ul ul li {
     width: 200px;
     float: none;
     display: list-item;
@@ -326,18 +325,18 @@ ul.menu li span {
  * We move the 2nd and 3rd etc tier dropdowns to the left
  * by the amount of the width of the first tier.
 */
-nav ul ul ul li {
+/*nav ul ul ul li {
     position: relative;
     top: -60px;
     /* has to be the same number as the "width" of "nav ul ul li" */
-    left: 170px;
+    /*left: 170px;
 }
 
 /* Change ' +' in order to change the Dropdown symbol */
-li > a:only-child:after {
+/*li > a:only-child:after {
     content: '';
 }
-
+*/
 
 /* Media Queries
 --------------------------------------------- */
