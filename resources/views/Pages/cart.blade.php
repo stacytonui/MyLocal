@@ -2,14 +2,9 @@
 
 @section('content')
     <section class="banner-bottom py-5">
-    <div class="container" ">
+    <div class="container mt-5" >
         <div class="col-12">
-        <nav aria-label="breadcrumb" style="width: 100%">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">Shop</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Cart</li>
-            </ol>
-        </nav>
+
         </div>
         @if(session()->has('success_msg'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -45,7 +40,7 @@
                     <h4>{{ \Cart::getTotalQuantity()}} Product(s) In Your Cart from  <b>{{$shop-> name}}</b></h4><br>
                 @else
                     <h4>No Product(s) In Your Cart</h4><br>
-                    <a href="/" class="btn btn-dark">Continue Shopping</a>
+                    <a href="/stores/{{$shop-> id}}" class="btn btn-dark">Continue Shopping</a>
                 @endif
 
                 @foreach($cartCollection as $item)
@@ -92,7 +87,7 @@
                 @if(count($cartCollection)>0)
                     <form action="{{ route('cart.clear') }}" method="POST">
                         {{ csrf_field() }}
-                        <button class="btn btn-secondary btn-md mb-2">Clear Cart</button>
+                        <button class="btn red-button">Clear Cart</button>
                     </form>
                 @endif
             </div>
@@ -105,8 +100,8 @@
                     </div>
                     <br>
 
-                    <a href="URL::previous()" class="btn btn-dark mb-2">Continue Shopping</a>
-                    <a href="/checkout" class="btn btn-success">Proceed To Checkout</a>
+                    <a href="/stores/{{$shop-> id}}" class="btn btn-dark mb-2">Continue Shopping</a>
+                    <a href="/checkout" class="btn red-button">Proceed To Checkout</a>
                 </div>
             @endif
         </div>

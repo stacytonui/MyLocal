@@ -1,10 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-10 mt-2 ">
+
                 <div class="container py-md-5">
+                    <h4 CLASS="mb-3">Stores Near You
+                        <hr>
+                    </h4>
                     <div class="row grids-wthree-info">
                         @foreach($store as $store)
                         <div class="col-lg-3 bag-img">

@@ -10,13 +10,13 @@
 </head>
 <body>
 <div id="app">
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" style="width: 100%; background-color: #ec1c24; margin-top: 0px">
+    <nav class="navbar navbar-expand-md navbar-light  fixed-top" style="width: 100%; background-color: antiquewhite; margin-top: 0px">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
-                MyLocal
-            </a>
+            <div id="logo">
+                <h1> <a href="/"><span class="log-w3pvt">My</span>local</a> <label class="sub-des">Online Store</label></h1>
+            </div>
 
-            @yield('category')
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,17 +29,18 @@
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
-                    <!-- Authentication Links -->
-                    @guest
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
+
+                    <div class="forms ml-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                        <a href="{{ route('login') }}" class="btn"><span class="fa fa-user-circle-o"></span> Sign In</a>
                         @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
-                        @endif
+                        <a href="{{ route('register') }}" class="btn"><span class="fa fa-pencil-square-o"></span> Sign Up</a>
+                    </div>
+                    @endif
                     @else
+
+
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle"
                                href="#" role="button" data-toggle="dropdown"
@@ -50,8 +51,8 @@
                         </span>
                             </a>
 
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" style="width: 450px; padding: 0px; border-color: #9DA0A2">
-                                <ul class="list-group dropdown-item" style="margin: 20px;">
+                            <div class="dropdown-menu dropdown-menu-right cart-menu" aria-labelledby="navbarDropdown" style=" padding: 0px; border-color: #9DA0A2">
+                                <ul class="list-group dropdown-item" style="">
                                     @include('inc.cart-drop')
                                 </ul>
 

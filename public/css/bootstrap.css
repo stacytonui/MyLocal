@@ -5167,7 +5167,7 @@ tbody.collapse.show {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-left: 0;
+
   margin-bottom: 0;
 }
 

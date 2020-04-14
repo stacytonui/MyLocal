@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,9 +21,21 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/home', 'LocationsController@index');
-//Route::get('/stores/{store}', 'StoresController@show');
 Route::get('/stores/{store}', 'ProductsController@index')->name('store');
+Route::get('/checkout', function (){
+    $user = Auth::user();
+
+
+    return view('pages.checkout')->with('user', $user);
+});
+Route::get('/attach', function ()
+{
+    $store = \App\Store::find(41);
+
+    $products = \App\Product::all();
+    $store ->products()->sync($products);
+});
+
 
 
 Route::get('/cart', 'CartController@cart')->name('cart.index');
@@ -32,11 +45,10 @@ Route::post('/remove', 'CartController@remove')->name('cart.remove');
 Route::post('/clear', 'CartController@clear')->name('cart.clear');
 
 
-Route::post('/stores', 'LocationsController@getLocation');
-Route::get('/refresh', function (){
+Route::post('/stores', 'StoresController@show');
 
 
-});
+
 
 
 

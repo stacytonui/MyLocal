@@ -9,23 +9,20 @@ use Illuminate\Support\Facades\Auth;
 
 class StoresController extends Controller
 {
-    public function __construct()
+
+    public function show(Request $request)
     {
-        $this->middleware('auth');
-    }
-    public function show(Store $store)
-    {
-        //$store->products()->where('id', $store)->get();
-        //$products =Store::where('id', $storeid)->get();
-        //$store = Store::where('locations_id', $data)->get();
+
+        $postData = $request->location;
 
 
 
-       //$local = Store::findorfail($store);
-        //$user = Auth::user();
+        $store = Store::where('locations_id',  $postData )->get();
+        //($store);
+        return view('pages.store',['store' => $store,]);
 
-       // return dd($user);
-        return view('pages.shop', compact('store'));
+
+
 
     }
 

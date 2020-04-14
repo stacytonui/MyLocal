@@ -31,6 +31,7 @@
     <!-- /Fonts -->
     <link href="//fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet">
     <!-- //Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&display=swap" rel="stylesheet">
 
 </head>
 
@@ -42,7 +43,7 @@
             <!-- nav -->
             <div class="top-w3pvt d-flex">
                 <div id="logo">
-                    <h1> <a href="index.html"><span class="log-w3pvt">My</span>local</a> <label class="sub-des">Online Store</label></h1>
+                    <h1> <a href="/"><span class="log-w3pvt">My</span>local</a> <label class="sub-des">Online Store</label></h1>
                 </div>
 
                 <div class="forms ml-auto">
@@ -69,8 +70,8 @@
         </div>
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h3>Beer, Wines & Spirits <br> <span class="mt-3" style="color: #1b1e21; text-transform: capitalize;" >Delivered within Minutes</span></h3>
-                <a href="{{ route('login') }}" class="btn shop mb-2">Shop Now</a>
+                <h3 style="font-family: 'IM Fell French Canon SC', serif;">Beer, Wines & Spirits <br> <span class="mt-3" style="color: #1b1e21; text-transform: capitalize;" >Delivered within Minutes</span></h3>
+                <a href="/home" class="btn shop mb-2">Shop Now</a>
             </div>
 
 

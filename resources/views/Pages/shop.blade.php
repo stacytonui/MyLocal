@@ -2,42 +2,8 @@
 
 @section('content')
 
-    <div class="d-flex pt-5" id="wrapper">
 
-        <!-- Sidebar -->
-        <div class="bg-light border-right sidenav pt-5 " id="sidebar-wrapper">
-            <div class="sidebar-heading">CATEGORIES</div>
-            <div class="list-group list-group-flush">
-                <a href="#" class="list-group-item list-group-item-action bg-light">Beer</a>
-                <a href="#" class="list-group-item list-group-item-action bg-light">Wine</a>
-
-                <a href="#" class="list-group-item list-group-item-action bg-light">Vodka</a>
-                <a href="#" class="list-group-item list-group-item-action bg-light">Whiskey</a>
-                <a href="#" class="list-group-item list-group-item-action bg-light">Liquer</a>
-                <a href="#" class="list-group-item list-group-item-action bg-light">Soft Drinks</a>
-            </div>
-        </div>
-        <!-- /#sidebar-wrapper -->
-
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-
-            @section('category')
-                <a class="" href="#" id="menu-toggle" style="color: white">Categories</a>
-
-            @endsection
-
-
-            <div class="container-fluid mainshop">
-                <div class="container pb-5">
-                    <nav aria-label="breadcrumb" style="width: 100%; z-index: 0">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Stores</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">{{$shop->name}}</li>
-                        </ol>
-                    </nav>
-                </div>
-                <div class="container">
+                <div class="container mt-5 pt-5">
 
                     @if(session()->has('success_msg'))
                         <div class="alert alert-success alert-dismissible fade show " role="alert">
@@ -51,9 +17,10 @@
 
                         <div class="col-lg-12">
 
-                            <h5 class="text-center">SHOP NOW</h5>
+                            <h4 class="text-center">SHOP NOW</h4>
+
                             <!--/row-->
-                            <h4>BEERS</h4>
+                            <h5>BEERS</h5>
                             <div class="row shop-wthree-info text-center">
                                 @foreach($beer as $beer)
 
@@ -111,7 +78,7 @@
                                 </div>
                             </div>
                             <!--//row-->
-                            <h4>WINE</h4>
+                            <h5>WINE</h5>
                             <div class="row shop-wthree-info text-center">
                                 @foreach($wine as $wine)
 
@@ -165,11 +132,6 @@
 
                     </div>
                 </div>
-            </div>
-        </div>
-        <!-- /#page-content-wrapper -->
-
-    </div>>
 
     <script>
         $("#menu-toggle").click(function (e) {

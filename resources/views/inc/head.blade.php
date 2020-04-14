@@ -24,6 +24,8 @@
 <link href="{{ asset('css/simple-sidebar.css') }}" rel="stylesheet">
 <!-- font-awesome-icons -->
 <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet">
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&display=swap" rel="stylesheet">
 <!-- //font-awesome-icons -->
 <!-- /Fonts -->
 <link href="//fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet">
