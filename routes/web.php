@@ -22,12 +22,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/stores/{store}', 'ProductsController@index')->name('store');
-Route::get('/checkout', function (){
-    $user = Auth::user();
-
-
-    return view('pages.checkout')->with('user', $user);
-});
+Route::get('/checkout', 'CheckoutController@index');
 Route::get('/attach', function ()
 {
     $store = \App\Store::find(41);

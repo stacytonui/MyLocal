@@ -32,22 +32,13 @@
 
                     <div class="forms ml-auto">
                         <!-- Authentication Links -->
-                        @guest
-                        <a href="{{ route('login') }}" class="btn"><span class="fa fa-user-circle-o"></span> Sign In</a>
-                        @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="btn"><span class="fa fa-pencil-square-o"></span> Sign Up</a>
-                    </div>
-                    @endif
-                    @else
-
-
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle"
                                href="#" role="button" data-toggle="dropdown"
                                aria-haspopup="true" aria-expanded="false"
                             >CART
-                        <span class="badge badge-pill badge-dark">
-                            <i class="fa fa-shopping-cart" style="font-size: 20px;"></i> {{ \Cart::getTotalQuantity()}}
+                                <span class="badge badge-pill">
+                            <i class="fa fa-shopping-cart" style="font-size: 20px; background-color: antiquewhite;"></i> {{ \Cart::getTotalQuantity()}}
                         </span>
                             </a>
 
@@ -58,6 +49,16 @@
 
                             </div>
                         </li>
+                        @guest
+                        <a href="{{ route('login') }}" class="btn"><span class="fa fa-user-circle-o"></span> Sign In</a>
+                        @if (Route::has('register'))
+                        <a href="{{ route('register') }}" class="btn"><span class="fa fa-pencil-square-o"></span> Sign Up</a>
+                    </div>
+                    @endif
+                    @else
+
+
+
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }} <span class="caret"></span>

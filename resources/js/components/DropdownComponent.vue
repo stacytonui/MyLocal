@@ -8,24 +8,24 @@
                     <div class="card-body">
                         <form action="/stores/" method="post">
                             <input type="hidden" name="_token" v-bind:value="csrf">
-                        <div class="form-group row ">
-                            <div class="col-6">
-                            <label>Select City:</label>
-                            <select class='form-control' v-model='city' @change='getLocations()' required>
-                                <option value='0' disabled >Select City</option>
-                                <option v-for='data in cities' :value='data.id'>{{ data.name }}</option>
-                            </select>
+                            <div class="form-group row ">
+                                <div class="col-6">
+                                    <label>Select City:</label>
+                                    <select class='form-control' v-model='city' @change='getLocations()' required>
+                                        <option value='0' disabled >Select City</option>
+                                        <option v-for='data in cities' :value='data.id'>{{ data.name }}</option>
+                                    </select>
 
-                            </div>
-                            <div class="col-6">
-                            <label>Select Location:</label>
-                            <select class='form-control' name="location" v-model='location' required>
-                                <option value='0' disabled >Select Location</option>
-                                <option  v-for='data in locations'  :value='data.id'>{{ data.name }}</option>
-                            </select>
+                                </div>
+                                <div class="col-6">
+                                    <label>Select Location:</label>
+                                    <select class='form-control' name="location" v-model='location' required>
+                                        <option value='0' disabled >Select Location</option>
+                                        <option  v-for='data in locations'  :value='data.id'>{{ data.name }}</option>
+                                    </select>
 
+                                </div>
                             </div>
-                        </div>
                             <button class="btn red-button justify-content-center">Available Stores</button>
 
                         </form>
@@ -48,11 +48,8 @@
                 cities: [],
                 location: 0,
                 locations: [],
-
                 errors: {},
-
                 location3:""
-
             }
         },
         props: ['csrf', 'oldName'],
@@ -62,7 +59,6 @@
                     .then(function (response) {
                         this.cities = response.data;
                     }.bind(this));
-
             },
             getLocations: function() {
                 axios.get('/api/get_locations',{
@@ -74,7 +70,6 @@
                 }.bind(this));
             }
         },
-
         created: function(){
             this.getCities()
         }

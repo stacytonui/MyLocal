@@ -125,8 +125,62 @@
                                         </div>
                                     </div>
                                 @endforeach
+                                    <div class="form-group col-12">
+                                        <hr>
+                                    </div>
                             </div>
                             <!--//row-->
+                            <h5>SOFT DRINKS</h5>
+                            <div class="row shop-wthree-info text-center">
+                                @foreach($drink as $drink)
+
+                                    <div class="col-lg-3 shop-info-grid text-center mt-4">
+                                        <div class="product-shoe-info shoe">
+                                            <div class="men-thumb-item">
+                                                <img src="{{ asset('images/'.$drink->imagePath) }}" class="img-fluid"
+                                                     alt="">
+
+                                            </div>
+                                            <div class="item-info-product">
+                                                <h4>
+                                                    <a href="">{{ $drink->name }} </a>
+                                                </h4>
+
+                                                <div class="product_price">
+                                                    <div class="grid-price">
+                                                        <span class="money">KES {{ $drink->price }}</span>
+                                                    </div>
+                                                </div>
+                                                <form action="{{ route('cart.store') }}" method="POST">
+                                                    {{ csrf_field() }}
+                                                    <input type="hidden" value="{{ $drink->id }}" id="id" name="id">
+                                                    <input type="hidden" value="{{ $drink->name }}" id="name"
+                                                           name="name">
+                                                    <input type="hidden" value="{{ $drink->price }}" id="price"
+                                                           name="price">
+                                                    <input type="hidden" value="{{ $drink->imagePath }}" id="img"
+                                                           name="img">
+                                                    <input type="hidden" value="{{ $drink->id }}" id="shopid"
+                                                           name="shopid">
+                                                    <input type="hidden" value="1" id="quantity" name="quantity">
+
+
+                                                    <div class="row text-center">
+                                                        <button class="btn btn-secondary btn-sm" class="tooltip-test "
+                                                                title="add to cart">
+                                                            <i class="fa fa-shopping-cart"></i> add to cart
+                                                        </button>
+                                                    </div>
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                                <div class="form-group col-12">
+                                    <hr>
+                                </div>
+                            </div>
 
                         </div>
 
